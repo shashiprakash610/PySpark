@@ -55,3 +55,18 @@ brew install python openjdk@11
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
+<pre><code>## 📁 Project Structure
+SPARK-ETL-PROJECT/
+├── config/
+│   └── schemas.py             # Spark schemas
+├── Data/
+│   ├── Raw/                   # Input CSVs
+│   └── processed/             # Output Parquet files
+├── scripts/
+│   ├── load.py                # ETL driver
+│   ├── transform.py           # Column transformation & metadata
+│   └── analyze.py             # Time-based aggregations
+├── requirements.txt
+└── README.md
+</code></pre>
