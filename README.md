@@ -56,7 +56,10 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-<pre><code>## 📁 Project Structure
+```
+
+
+### 📁 Project Structure
 SPARK-ETL-PROJECT/
 ├── config/
 │   └── schemas.py             # Spark schemas
@@ -69,4 +72,5 @@ SPARK-ETL-PROJECT/
 │   └── analyze.py             # Time-based aggregations
 ├── requirements.txt
 └── README.md
-</code></pre>
+
+
