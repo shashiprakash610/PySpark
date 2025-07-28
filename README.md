@@ -19,6 +19,8 @@
   - Parses dates, extracts `year` and `month`, and aggregates over time
 - 📦 **Outputs to Parquet**
   - Clean data is saved in optimized columnar format
+- 🌐 **Visualizations Added**
+  - Line plots showing trends across years and categories
 
 ---
 
@@ -39,6 +41,7 @@
 | Processing   | PySpark        |
 | Storage      | Parquet Files  |
 | Scripting    | Python 3.12    |
+| Visualization| Matplotlib, Seaborn |
 | IDE Tested On| VSCode + MacOS |
 
 ---
@@ -55,22 +58,65 @@ brew install python openjdk@11
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
 ```
 
-
-### 📁 Project Structure
+### 📂 Project Structure
+```
 SPARK-ETL-PROJECT/
 ├── config/
 │   └── schemas.py             # Spark schemas
 ├── Data/
 │   ├── Raw/                   # Input CSVs
 │   └── processed/             # Output Parquet files
+├── outputs/                  # Saved visualization images
 ├── scripts/
 │   ├── load.py                # ETL driver
 │   ├── transform.py           # Column transformation & metadata
-│   └── analyze.py             # Time-based aggregations
+│   ├── analyze.py             # Time-based aggregations
+│   └── visualize.py           # Matplotlib/Seaborn visualizations
 ├── requirements.txt
 └── README.md
+```
+
+---
+
+## 📅 How to Run the Pipeline
+
+```bash
+# 1. Activate virtual environment (if not already)
+source venv/bin/activate
+
+# 2. Run the ETL process
+python scripts/load.py
+
+# 3. Run data analysis
+python scripts/analyze.py
+
+# 4. Generate graphs
+python scripts/visualize.py
+```
+
+---
+
+## 🔍 Sample Visual Output
+> Output graphs are saved in the `outputs/` directory.
+
+### 📈 Unemployment Over Time
+![Unemployment Trend](outputs/unemployment_trend.png)
+
+### 🧑‍🤝‍🧑 Gender-wise Unemployment Trend
+![Gender Trend](outputs/unemployment_gender_trend.png)
+
+### 👶 Youth vs Long-term Unemployment
+![Youth vs Long Term](outputs/unemployment_youth_vs_longterm.png)
 
 
+---
+
+## 📊 Showcase This Project 
+
+> "Developed a PySpark-based ETL pipeline for time-series analysis of German unemployment data. Integrated multi-source datasets, enforced schema-driven validation, and automated visual reporting using Matplotlib."
+
+---
+
+## ✅ License
